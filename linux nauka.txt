@@ -1,0 +1,42 @@
+chromium
+nocne światło
+english
+studio
+anaconda
+python -m pip install -U pip
+pip install -r requirements.txt
+sudo apt update
+sudo apt upgrade
+sudo apt-get update && sudo apt-get upgrade
+sudo snap install tree
+snap install atom --classic
+sudo dpkg -i mongodb-compass_1.25.0_amd64.deb
+apt-get install -f -the package system is broken
+sudo apt-get update
+sudo apt-get install r-base
+sudo gdebi rstudio-1.2.5019-amd64.deb
+sudo apt-get install -y mongodb-org
+tree -L 1
+sugo apt-get install git
+
+
+
+
+mv dotini_unix .ini  # on Unix
+ren dotini_win .ini # on Windows
+vi .ini       # on Unix
+notepad .ini  # on Windows
+
+chmod 400 /var/mongodb/pki/m103-keyfile
+sudo chown myuser:myuser /var/mongodb_directory
+mkdir -p /db/mongodb_data/
+rm -rf <directory name> Warning!
+ls -la
+cat
+ps -ef | grep mongo
+killall mongod
+
+
+
+sudo apt install usb-creator-gtk
+usb-creator-gtk
