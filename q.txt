@@ -1,0 +1,263 @@
+     Add content     Press 'ctrl + d' to return to command prompt.Must Know Linux/Unix CommandsTo view a file, use the command -cat filenameLet's see the file we just created -Must Know Linux/Unix CommandsLet's see another file sample2Must Know Linux/Unix CommandsThe syntax to combine 2 files is -cat file1 file2 > newfilenameLet's combine sample 1 and sample 2.Must Know Linux/Unix CommandsAs soon as you insert this command and hit enter, the files are concatenated, but you do not see a result. This is because Bash Shell (Terminal) is silent type.  Shell Commands will never give you a confirmation message like "OK" or "Command Successfully Executed". It will only show a message when something goes wrong or when an error has occurred.To view the new combo file "sample" use the commandcat sampleMust Know Linux/Unix CommandsNote: Only text files can be displayed and combined using this command.Deleting FilesThe 'rm' command removes files from the system without confirmation.To remove a file use syntax -rm filenameMust Know Linux/Unix CommandsMoving and Re-naming filesTo move a file, use the command.mv filename new_file_locationSuppose we want to move the file "sample2" to location /home/guru99/Documents. Executing the commandmv sample2 /home/guru99/DocumentsMust Know Linux/Unix Commandsmv command needs super user permission. Currently, we are executing the command as a standard user. Hence we get the above error. To overcome the error use command.sudo command_you_want_to_executeSudo program allows regular users to run programs with the security privileges of the superuser or root.Sudo command will ask for password authentication. Though, you do not need to know the root password. You can supply your own password. After authentication, the system will invoke the requested command.Sudo maintains a log of each command run. System administrators can trackback the person responsible for undesirable changes in the system.guru99@VirtualBox:~$ sudo mv sample2 /home/quru99/Documents [sudo] password for guru99: ****guru99@VirtualBox:~$ For renaming file:mv filename newfilenameMust Know Linux/Unix CommandsNOTE: By default, the password you entered for sudo is retained for 15 minutes per terminal. This eliminates the need of entering the password time and again.You only need root/sudo privileges, only if the command involves files or directories not owned by the user or group running the commandsDirectory Manipulations
+
+Must Know Linux/Unix CommandsEnough with File manipulations! Let's learn some directory commands.Creating Directories
+
+Directories can be created on a Linux operating system using the following commandmkdir directorynameThis command will create a subdirectory in your present working directory, which is usually your "Home Directory".For example,mkdir mydirectoryMust Know Linux/Unix CommandsIf you want to create a directory in a different location other than 'Home directory', you could use the following command -mkdir For example:mkdir /tmp/MUSICwill create a directory 'Music' under '/tmp' directoryMust Know Linux/Unix CommandsYou can also create more than one directory at a time. Must Know Linux/Unix CommandsRemoving DirectoriesTo remove a directory, use the command -rmdir directorynameExamplermdir mydirectorywill delete the directory mydirectoryMust Know Linux/Unix CommandsTip: Ensure that there is no file / sub-directory under the directory that you want to delete. Delete the files/sub-directory first before deleting the parent directory.Must Know Linux/Unix CommandsRenaming DirectoryThe 'mv' (move) command (covered earlier) can also be used for renaming directories. Use the below-given format:mv directoryname newdirectorynameLet us try it:Must Know Linux/Unix CommandsOther Important CommandsThe 'Man' commandMan stands for manual which is a reference book of a Linux operating system. It is similar to HELP file found in popular software.To get help on any command that you do not understand, you can type
+
+man 
+
+The terminal would open the manual page for that command.
+
+For an example, if we type man man and hit enter; terminal would give us information on man command
+
+Must Know Linux/Unix Commands
+
+Must Know Linux/Unix Commands
+The History Command
+
+History command shows all the commands that you have used in the past for the current terminal session. This can help you refer to the old commands you have entered and re-used them in your operations again.
+
+Must Know Linux/Unix Commands
+The clear command
+
+This command clears all the clutter on the terminal and gives you a clean window to work on, just like when you launch the terminal.
+
+Must Know Linux/Unix Commands
+Pasting commands into the terminal
+
+Many times you would have to type in long commands on the Terminal. Well, it can be annoying at times, and if you want to avoid such a situation then copy, pasting the commands can come to rescue.
+
+For copying, the text from a source, you would use Ctrl + c, but for pasting it on the Terminal, you need to use Ctrl + Shift + p. You can also try Shift + Insert or select Edit>Paste on the menu
+
+NOTE: With Linux upgrades, these shortcuts keep changing. You can set your preferred shortcuts via Terminal> Edit> Keyboard Shortcuts.
+Printing in Unix/Linux
+
+Unix/Linux - Print , Email , Install New Software
+
+Let's try out some easy unix command list which can print files in a format you want. What more, your original file does not get affected at all by the formatting that you do. Let us learn about these commands and their use.
+
+Click here if the video is not accessible
+
+'pr' command
+
+This command helps in formatting the file for printing on the terminal. There are many options available with this command which help in making desired format changes on file. The most used 'pr' options are listed below.   
+Option 	Function
+-x 	Divides the data into 'x' columns
+-h "header" 	Assigns "header" value as the report header
+-t 	Does not print the header and top/bottom margins
+-d 	Double spaces the output file
+-n 	Denotes all line with numbers
+-l page length 	Defines the lines (page length) in a page. Default is 56
+-o margin 	Formats the page by the margin number
+
+Let us try some of the options and study their effects.
+
+Dividing data into columns
+
+'Tools' is a file (shown below).
+
+Unix/Linux - Print , Email , Install New Software
+
+We want its content to be arranged in three columns. The syntax for the same would be:
+
+pr -x Filename
+
+The '-x' option with the 'pr' command divides the data into x columns.
+
+Unix/Linux - Print , Email , Install New Software
+
+Assigning a header
+
+The syntax is:
+
+pr -h "Header" Filename
+
+The '-h' options assigns "header" value as the report header.
+
+Unix/Linux - Print , Email , Install New Software
+
+As shown above, we have arranged the file in 3 columns and assigned a header
+
+Denoting all lines with numbers
+
+The syntax is:
+
+pr -n Filename
+
+This command denotes all the lines in the file with numbers.
+
+Unix/Linux - Print , Email , Install New Software
+
+These are some of the 'pr' command options that you can use to modify the file format.
+
+Printing a file
+
+Once you are done with the formatting, and it is time for you to get a hard copy of the file, you need to use the following command:
+
+lp Filename
+
+or
+
+lpr Filename
+
+In case you want to print multiple copies of the file, you can use the number modifier.
+
+Unix/Linux - Print , Email , Install New Software
+
+In case you have multiple printers configured, you can specify a particular printer using the Printer modifier
+
+Unix/Linux - Print , Email , Install New Software
+Installing Software
+
+In windows, the installation of a program is done by running the setup.exe file. The installation bundle contains the program as well various dependent components required to run the program correctly.
+
+Unix/Linux - Print , Email , Install New Software
+
+In Linux/UNIX, installation files are distributed as packages. But the package contains only the program itself. Any dependent components will have to be installed separately which are usually available as packages themselves.
+
+Unix/Linux - Print , Email , Install New Software
+
+You can use the apt commands to install or remove a package. Let's update all the installed packages in our system using command -
+
+sudo apt-get update
+
+Unix/Linux - Print , Email , Install New Software
+
+The easy and popular way to install programs on Ubuntu is by using the Software center as most of the software packages are available on it and it is far more secure than the files downloaded from the internet.
+
+Unix/Linux - Print , Email , Install New Software
+Linux Mail Command
+
+For sending mails through a terminal, you will need to install packages 'mailutils'.
+
+The command syntax is -
+
+sudo apt-get install packagename
+
+Once done, you can then use the following syntax for sending an email.
+
+mail -s 'subject' -c 'cc-address' -b 'bcc-address' 'to-address'
+
+This will look like:
+
+Unix/Linux - Print , Email , Install New Software
+
+Press Cntrl+D you are finished writing the mail. The mail will be sent to the mentioned address.
+
+Summary
+
+    You can format and print a file directly from the terminal. The formatting you do on the files does not affect the file contents
+    In Unix/Linux,  software is installed in the form of packages. A package contains the program itself. Any dependent component needs to be downloaded separately.
+    You can also send e-mails from terminal using the 'mail' network commands. It is very useful linux commands.
+
+Linux Command List
+
+Below is a Cheat Sheet of Linux commands we have learned in this tutorial
+
+Command
+	
+
+Description
+
+ls
+	
+
+Lists all files and directories in the present working directory
+
+ls - R
+	
+
+Lists files in sub-directories as well
+
+ls - a
+	
+
+Lists hidden files as well
+
+ls - al
+	
+
+Lists files and directories with detailed information like permissions, size, owner, etc.
+
+cat > filename
+	
+
+Creates a new file
+
+cat filename
+	
+
+Displays the file content
+
+cat file1 file2 > file3
+	
+
+Joins two files (file1, file2) and stores the output in a new file (file3)
+
+mv  file "new file path"
+	
+
+Moves the files to the new location
+
+mv filename new_file_name
+	
+
+Renames the file to a new filename
+
+sudo
+	
+
+Allows regular users to run programs with the security privileges of the superuser or root
+
+rm filename
+	
+
+Deletes a file
+
+man
+	
+
+Gives help information on a command
+
+history
+	
+
+Gives a list of all past commands typed in the current terminal session
+
+clear
+	
+
+Clears the terminal
+
+mkdir directoryname
+	
+
+Creates a new directory in the present working directory or a at the specified path
+
+rmdir
+	
+
+Deletes a directory
+
+mv
+	
+
+Renames a directory
+pr -x 	Divides the file into x columns
+pr -h 	Assigns a header to the file
+pr -n 	Denotes the file with Line Numbers
+lp -nc
+lpr c 	Prints "c" copies of the File
+lp -d lp -P 	Specifies name of the printer
+apt-get 	Command used to install and update packages
+mail -s 'subject' -c 'cc-address' -b 'bcc-address' 'to-address' 	Command to send email
+mail -s "Subject" to-address < Filename 	Command to send email with attachment
+
+Download Linux Tutorial PDF
+
+ 
+
+    Prev
+    Report a Bug
+    Next
+
