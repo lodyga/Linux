@@ -5,6 +5,7 @@ studio
 anaconda
 python -m pip install -U pip
 pip install -r requirements.txt
+sudo apt-get update && sudo apt-get dist-upgrade
 sudo apt update
 sudo apt upgrade
 sudo apt-get update && sudo apt-get upgrade
@@ -18,8 +19,93 @@ sudo gdebi rstudio-1.2.5019-amd64.deb
 sudo apt-get install -y mongodb-org
 tree -L 1
 sugo apt-get install git
+sudo apt install mysql-server
+sudo apt install default-jdk
+pip install pytest-xdist
+conda install -c anaconda jedi
+conda update conda
+pip list
+conda list
+conda update flask
+sudo apt-get install python3-distutils
+sudo apt-get install python3-apt
+sudo apt-get install idle
+jupyter notebook --browser firefox
+sudo apt-get install package
+sudo apt-get install python3
 
 
+spotify install
+    sudo apt install curl
+    curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
+    echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+    sudo apt update
+    sudo apt install spotify-client
+    
+
+
+PostgreSQL
+    sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+    wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+    sudo apt-get update
+    sudo apt-get -y install postgresql
+
+
+razer
+    sudo apt install software-properties-gtk
+    sudo add-apt-repository ppa:openrazer/stable
+    sudo apt update && sudo apt upgrade
+    sudo apt install openrazer-meta
+
+    sudo add-apt-repository ppa:openrazer/stable
+    sudo add-apt-repository ppa:polychromatic/stable
+    sudo apt update
+    sudo apt install openrazer-meta polychromatic
+
+
+python 3.9
+    sudo apt install python3.9
+
+
+sudo apt install gnome-tweak-tool
+
+image 
+    balenaEtcher-1.5.116-x64
+
+xkb
+    setxkbmap ua -print | xkbcomp - - | xkbprint - - | ps2pdf - > ua.pdf
+    
+grep
+    grep -nr "AC09.*\s*L,\s*lstroke"
+    grep -nr 'yourString*' .
+    -n            Show relative line number in the file
+    'yourString*' String for search, followed by a wildcard character
+    -r            Recursively search subdirectories listed, grep jest katalogiem
+    .             Directory for search (current directory)
+    \s	Match a space.
+    .* Matches any number of characters
+
+
+workspace
+    https://extensions.gnome.org/extension/1485/workspace-matrix/
+    plugin do chroma nie chcą działać, zainst przez firefoxa
+    sudo apt-get install chrome-gnome-shell
+    https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep
+
+shortcuts
+    http://apt.ubuntu.com/p/dconf-tools
+    dconf-editor > org > gnome > desktop > wm > keybindings
+    Switch to workspace above ['<Super>Page_Up', '<Control><Alt>Up']
+    
+
+dconf
+    // backup
+    dconf dump /org/gnome/desktop/wm/keybindings/ > wm-keybindings.dconf.bak
+    dconf dump /org/gnome/mutter/keybindings/ > mu-keybindings.dconf.bak
+    
+    // restore
+    dconf load /org/gnome/desktop/wm/keybindings/ < wm-keybindings.dconf.bak
+    dconf load /org/gnome/mutter/keybindings/ < mu-keybindings.dconf.bak
 
 
 mv dotini_unix .ini  # on Unix
@@ -35,7 +121,7 @@ ls -la
 cat
 ps -ef | grep mongo
 killall mongod
-
+df –h /         disk space
 
 
 sudo apt install usb-creator-gtk
