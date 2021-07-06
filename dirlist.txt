@@ -1,9 +1,0 @@
-ls: nie ma dostępu do 'ABC': Nie ma takiego pliku ani katalogu
-Dokumenty:
-dup1
-filename
-t1
-t2
-terminal
-Terminal.odt
-test1 (kopia).odt
