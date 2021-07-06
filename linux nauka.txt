@@ -133,8 +133,7 @@ nautilus
 dalej nie działa
 
 keyring
-    https://askubuntu.com/questions/867/how-can-i-stop-being-prompted-to-unlock-the-default-keyring-on-boot
-    dupa
+    https://linuxx.info/how-to-disable-keyring-ubuntu/
 
 
 
@@ -161,3 +160,14 @@ df –h /         disk space
 
 sudo apt install usb-creator-gtk
 usb-creator-gtk
+
+
+
+nauka
+files
+cat > filename.txt ctrl+d
+touch filename.txt
+> filename.txt
+echo "some text" > filename
+echo "some text" >> filename
+rm filename
