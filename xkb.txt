@@ -1,3 +1,7 @@
+> Developer: Toogle keyboard shortcuts troubleshooting
+
+Used to find out the keycodes (showkey --keycode) and scancodes (showkey --scancode) of a key when pressed.
+
 setxkbmap pl -print | xkbcomp - - | xkbprint - - | ps2pdf - > pl.pdf
 xkbcomp /usr/share/X11/xkb/geometry/microsoft - | xkbprint -color -o - - | ps2pdf - > pl.pdf
 
@@ -7,9 +11,11 @@ keycodes/evdev - default xkb_keycodes "evdev"
 // Fake keycodes for virtual keys
 keycodes/xfree86 - default xkb_keycodes "xfree86"
 
+<AE01> = 49; map a keyboard key code (49 in this case) onto a symbolic key name (<AE01> in this case).
 The symbols component maps the symbolic key codes created by the keycodes component onto whatever symbols the user wants to produce. 
 key <LABL> { [ G1L1, G1L2, G1L3, ... ], [ G2L1, G2L2, G2L3, ... ], ... }
 <LABL> is keylabel (key code) from xkb_keycodes section, GiLj is keysym for group i level j. 
+
 
 types/basic - ONE_LEVEL, ALPHABETIC
 
@@ -20,6 +26,10 @@ partial
 xkb_symbols "foo" {};
 include "filename_with_foo(foo)"
 
+<description>Czech (with &lt;\|&gt; key)</description>
+  *		=       pc(pc104)  to chyba default dla wszutkich klawiatur 
+geometry/pc
+keycodes/evdev
 
 partial default xkb_types "default" {}; w types; może być w więcej niż jednym pliku
 partial default xkb_types "pc" {}
@@ -53,9 +63,7 @@ systemctl restart keyboard-setup
 rules/evdev.lst:501:  T3              de: German (T3)
 rules/base.lst:501:  T3              de: German (T3)
 rules/evdev.xml:3537:            <name>T3</name>
-rules/evdev.xml:3538:            <description>German (T3)</description>
 rules/base.xml:3537:            <name>T3</name>
-rules/base.xml:3538:            <description>German (T3)</description>
 
 
         <variant>

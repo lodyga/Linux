@@ -136,8 +136,50 @@ keyring
     https://linuxx.info/how-to-disable-keyring-ubuntu/
 
 
+Jenkins
+    wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+    Then add the following entry in your /etc/apt/sources.list:
+        deb https://pkg.jenkins.io/debian-stable binary/
+    sudo apt-get update
+    sudo apt-get install jenkins
 
 
+Django
+    pip install Django==3.2.6
+    apt install python3-django
+
+
+SnapCraft
+    snap install --devmode --beta whatpulse
+
+npm
+    sudo su
+    npm install -g npmnpm install -g npm
+
+Yarn
+    npm install -g yarn
+
+node
+    sudo apt update
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+    sudo apt install curl
+    source ~/.bashrc
+    nvm --version
+    nvm ls
+    nvm ls-remote
+    nvm install v16.8.0
+
+webpack
+    yarn install
+    npm view webpack version
+
+# nvidia
+flatpak
+    sudo apt install flatpak
+    flatpak --user install flathub com.leinardi.gwe
+    flatpak update
+    flatpak run com.leinardi.gwe
+    
 
 
 mv dotini_unix .ini  # on Unix
