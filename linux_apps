@@ -110,6 +110,32 @@ dconf
 chromium
     use system title bar and borders
 
+swapfile from 4 GB to 8 GB.
+    Turn off all swap processes
+    sudo swapoff -a
+    2. Resize the swap
+
+    sudo dd if=/dev/zero of=/swapfile bs=1G count=8
+    if = input file
+    of = output file
+    bs = block size
+    count = multiplier of blocks
+
+    3. Change permission
+    sudo chmod 600 /swapfile
+    4. Make the file usable as swap
+
+    sudo mkswap /swapfile
+    5. Activate the swap file
+
+    sudo swapon /swapfile
+    6. Edit /etc/fstab and add the new swapfile if it isn’t already there
+
+    /swapfile none swap sw 0 0
+    7. Check the amount of swap available
+
+    grep SwapTotal /proc/meminfo
+
 r-cran-curl
     sudo apt-get update -y
     sudo apt-get install -y r-cran-curl
@@ -215,6 +241,16 @@ docker-scan-plugin
     sudo apt-get upgrade docker-ce
     apt-get update && apt-get install docker-scan-plugin
     
+slack
+    sudo snap install slack --classic
+
+skype
+    sudo snap install skype
+    
+calibre
+    sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+
+
 
 
 mv dotini_unix .ini  # on Unix

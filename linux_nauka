@@ -7,7 +7,7 @@ sudo chown
 sudo chgrp
 > redirect (output)
 >> add (append)
-echo
+echo -e "first line""\n""second line\nthird line" > input.txt
 < input redirection
 find . -name "*"
 ">&" re-directs output of one file to another
@@ -31,7 +31,7 @@ Expression	Description
 cat filename | grep "a\+t"
 echo 1{a..z}
 echo $PATH
-VARIABLE_NAME= variable_value
+VARIABLE_NAME=variable_value
 echo $VARIABLE_NAME
 unset varaiblename
 env
@@ -65,6 +65,10 @@ crontab -l
 crontab -r
 0 */2 * * * /home/ukasz/script2.sh
 */1* * * * *  $HOME/script2.sh
+display <pic>.png
+xdg-open <pdf>.pdf gio open <pdf>.pdf
+
+
 
 Basic Linux commands
 Command	Description
@@ -77,6 +81,8 @@ cd ..	Move one level up
 cd	To change to a particular directory
 cd /	Move to the root directory
 cat > filename	Creates a new file
+ctrl+d
+echo 'some_text' > <file_name>
 echo 'some_text' | cat > <file_name>
 cat filename	Displays the file content
 cat file1 file2 > file3	Joins two files (file1, file2) and stores the output in a new file (file3)
@@ -112,7 +118,7 @@ Environment Variables command
 Command	Description
 echo $VARIABLE	To display value of a variable
 env	Displays all environment variables
-VARIABLE_NAME= variable_value	Create a new variable
+VARIABLE_NAME=variable_value	Create a new variable
 Unset	Remove a variable
 export Variable=value	To set value of an environment variable
 User management commands of linux
