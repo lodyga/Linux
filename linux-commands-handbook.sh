@@ -197,14 +197,13 @@ env # a list of the environment variables set
 printenv PATH # == printenv | grep PATH
 
 
-
-
-
-
-
-
-
-
-
-
+sed [options] 'script' file
+# sed = stream editor, s = substitution
+sed 's/hello/world/' sample.txt  # hello -> world in sample.txt
+/g replace all in line
+-i in-place
+-n suppress print
+'1,2p'  print lines in range
+'/hello/d' delete
+-e Execute multiple commands.
 
