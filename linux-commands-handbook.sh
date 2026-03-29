@@ -124,12 +124,15 @@ chmod 777 filename
 umask #0022
 
 The du command will calculate the size of a directory as a whole:
+du -hs <dir>  # the size of the target directory
+du -hsc * #  To check the size of each directory in the current directory
 du -h * # display the size of each file in human-readable notation
 du -m * # display the size of each file in MegaBytes
-du -h /home/ute/Downloads/
 du -ah * # -a option will print the size of each file in the directories
+du -c # Grand total (-c) at the end
 
 df -h # get disk usage in a human-readable format
+
 
 basename /home/ukasz/t2.txt # will return the filename
 basename /home/ukasz/ # will return the dirname
@@ -147,6 +150,7 @@ top -o %CPU # sort processes by CPU
 top -o %MEM # sort processes by memory
 
 kill <PID> # 
+kill -f <PID> # force kill
 killall <name> # kill multiple instances
 
 
