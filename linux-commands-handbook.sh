@@ -1,3 +1,4 @@
+cat /etc/os-release  # version
 man <command> #manual help
 man ls
 <command> -h; <command> --help
@@ -11,7 +12,7 @@ pwd # print the current folder path
 
 mkdir -p fruits/apples # multiple nested folders
 
-rm -rf fruits cars # deletes files and folders
+rm -fr fruits cars # deletes files and folders
 
 mv pear apple fruits # pear and apple moved to the fruits
 
@@ -23,6 +24,8 @@ open <application name>
 
 touch <filename> # create an empty file
 
+find . -type f
+find . -type f | xargs wc -l # find files with the line count
 find -name "*.html" find all html recursivelyi
 find . -name '*.txt' # Find all txt files under the current tree
 find . -type d -name 'foo*' # Find all 'foo*' directories under the current tree
@@ -49,6 +52,7 @@ tar -czf arch.tar.gz t2.txt test.txt # compressed archive
 tar -xf arch.tar.gz # unzip
 
 alias ll='ls -al' # alias to ls -al
+# env variables
 cat ~/.bashrc #  aliases shell configuration
 $PWD refers to the current folder the shell is into
 
@@ -68,6 +72,7 @@ tail -n5 t2.txt # last 5 lines
 tail -n+5 t2.txt # print the whole file content starting from a specific line using
 
 ls -al | wc # the number of lines/words/bytes
+wc -l test.txt # count the lines
 wc -l test.txt # count the lines
 wc -w test.txt # words
 wc -c test.txt # bytes
@@ -108,6 +113,8 @@ sudo chown ukasz sutxt.txt # transfer the ownership
 chown -R <owner> <file> # change the ownership of a directory, and recursively all the files contained
 chown <owner>:<group> <file> # change an owner and a group
 chgrp <group> <filename> # change only a group
+sudo chown -R ubuntu:www-data /var/www/codesite
+
 
 chmod
 # The first set represents the permissions of the owner of the file
@@ -120,8 +127,11 @@ chmod o-rwx filename #others (not the owner, not in
 2 if has write permission
 4 if has read permission
 chmod 777 filename
+chmod +x ~/.xsession
+
 
 umask #0022
+
 
 The du command will calculate the size of a directory as a whole:
 du -hs <dir>  # the size of the target directory
@@ -131,7 +141,8 @@ du -m * # display the size of each file in MegaBytes
 du -ah * # -a option will print the size of each file in the directories
 du -c # Grand total (-c) at the end
 
-df -h # get disk usage in a human-readable format
+free -h     Ram + Swap 
+df -kh .    Storage
 
 
 basename /home/ukasz/t2.txt # will return the filename
@@ -145,12 +156,14 @@ ps ax # list all processes
 ps axww # continue the command listing on a new line instead of cutting it
 ps axww | grep "Visual Studio Code"
 
+
+
 top # list the processes running in real time
 top -o %CPU # sort processes by CPU
 top -o %MEM # sort processes by memory
 
 kill <PID> # 
-kill -f <PID> # force kill
+kill -9 <PID> # force kill
 killall <name> # kill multiple instances
 
 
@@ -195,7 +208,7 @@ uname -a # all info
 
 env # a list of the environment variables set
 printenv PATH # == printenv | grep PATH
-
+~/.d
 
 sed [options] 'script' file
 # sed = stream editor, s = substitution
@@ -206,4 +219,33 @@ sed 's/hello/world/' sample.txt  # hello -> world in sample.txt
 '1,2p'  print lines in range
 '/hello/d' delete
 -e Execute multiple commands.
+
+
+
+cat some_text.txt | awk '{print $5}' | sort | uniq -c | sort -r -n -k1 | head -n2
+
+Replace next line indicators with next line.
+echo 'text\n' | sed 's/\\r\\n/\r\n/' | sed 's/\\n/\r\n/'
+
+
+
+
+
+
+network
+$ ssh ubuntu@158.101.162.117
+
+SSH tunnel
+$ ssh -L 3389:localhost:3389 ubuntu@158.101.162.117
+
+
+$ sudo -iu rdpuser
+
+
+sudo ss -lntup
+-l → listening
+-n → numeric addresses/ports
+-t → TCP
+-u → UDP
+-p → owning process
 
